@@ -6,50 +6,60 @@
 	<array>
 		<dict>
 			<key>ModifiedContent</key>
-			<string>class Vertex&lt;Element: Equatable&gt;: CustomStringConvertible {
+			<string>// class representing a vertex in a graph
+class Vertex&lt;Element: Equatable&gt;: CustomStringConvertible {
     var value: Element
     private(set) var adjacentEdges: [DirectedEdge&lt;Element&gt;] = []
-
+    
+    // constructor to intialise a vertex with a value
     init(_ value: Element) {
         self.value = value
     }
-
+    
+    // Add an edge to the list of adjacent edges for this vertex
     func addEdge(_ edge: DirectedEdge&lt;Element&gt;) {
         self.adjacentEdges.append(edge)
     }
-
+    
+    // Find the edge connecting to this vertex to a given destination
     func edgeForDestination(_ destination: Vertex&lt;Element&gt;) -&gt; DirectedEdge&lt;Element&gt;? {
         return adjacentEdges.first { $0.destination == destination }
     }
-
+    
+    // Custom string representation of the vertex 
     var description: String {
         let edgesDescription = adjacentEdges.map { $0.description }.joined(separator: ", ")
         return "[Vertex]: \(value) | [Adjacent Edges]: [\(edgesDescription)]"
     }
 }
 
+// Extension to make Vertex conform to requirements of Equatable
 extension Vertex: Equatable {
     static func ==(lhs: Vertex, rhs: Vertex) -&gt; Bool {
         return lhs.value == rhs.value &amp;&amp; lhs.adjacentEdges == rhs.adjacentEdges
     }
 }
 
+// Class to represent a directed edge between vertex
 class DirectedEdge&lt;Element: Equatable&gt;: CustomStringConvertible {
     var source: Vertex&lt;Element&gt;
     var destination: Vertex&lt;Element&gt;
     var weight: Double
 
+    // Constructor to intialise a directed edge with a source, destination and weight
     init(source: Vertex&lt;Element&gt;, destination: Vertex&lt;Element&gt;, weight: Double) {
         self.source = source
         self.destination = destination
         self.weight = weight
     }
-
+    
+    // Custom string representation of the directed edge
     var description: String {
         return "[Edge] [Destination]: \(destination.value) - [Weight]: \(weight)"
     }
 }
 
+// extension to make DirectedEdge conform to requirements of Equatable
 extension DirectedEdge: Equatable {
     static func ==(lhs: DirectedEdge, rhs: DirectedEdge) -&gt; Bool {
         return lhs.source == rhs.source &amp;&amp;
@@ -58,13 +68,16 @@ extension DirectedEdge: Equatable {
     }
 }
 
+// class to represent an edge-weighted di-graph
 class EdgeWeightedDigraph&lt;Element: Equatable&gt; {
     private(set) var vertices: [Vertex&lt;Element&gt;] = []
 
+    // Add a vertex to the graph
     func addVertex(_ vertex: Vertex&lt;Element&gt;) {
         vertices.append(vertex)
     }
-
+     
+    // Add and update an edge between two vertex with given weight
     func addEdge(source: Vertex&lt;Element&gt;, destination: Vertex&lt;Element&gt;, weight: Double) {
         if let existingEdge = source.edgeForDestination(destination) {
             existingEdge.weight = weight
@@ -73,24 +86,29 @@ class EdgeWeightedDigraph&lt;Element: Equatable&gt; {
             source.addEdge(newEdge)
         }
     }
-
+    
+    // Get the adjacent edge for vertex
     func adjacentEdges(forVertex vertex: Vertex&lt;Element&gt;) -&gt; [DirectedEdge&lt;Element&gt;] {
         return vertex.adjacentEdges
     }
 
+    // return all edges in the graph
     func edges() -&gt; [DirectedEdge&lt;Element&gt;] {
         return vertices.flatMap { $0.adjacentEdges }
     }
 
+    // return the count of all edges
     func edgesCount() -&gt; Int {
         return edges().count
     }
 
+    // return the count of all vertices
     func verticesCount() -&gt; Int {
         return vertices.count
     }
 }
 
+// creating vertices
 let dublin = Vertex&lt;String&gt;("Dublin")
 let london = Vertex&lt;String&gt;("London")
 let paris = Vertex&lt;String&gt;("Paris")
@@ -98,6 +116,7 @@ let amsterdam = Vertex&lt;String&gt;("Amsterdam")
 let montreal = Vertex&lt;String&gt;("Montreal")
 let sanFrancisco = Vertex&lt;String&gt;("San Francisco")
 
+// creating the graph
 let graph = EdgeWeightedDigraph&lt;String&gt;()
 graph.addVertex(dublin)
 graph.addVertex(london)
@@ -106,6 +125,7 @@ graph.addVertex(amsterdam)
 graph.addVertex(montreal)
 graph.addVertex(sanFrancisco)
 
+// adding edges with weights to the graph
 graph.addEdge(source: dublin, destination: london, weight: 20)
 graph.addEdge(source: dublin, destination: amsterdam, weight: 25)
 graph.addEdge(source: dublin, destination: paris, weight: 35)
@@ -119,13 +139,16 @@ graph.addEdge(source: amsterdam, destination: sanFrancisco, weight: 450)
 graph.addEdge(source: montreal, destination: sanFrancisco, weight: 200)
 graph.addEdge(source: sanFrancisco, destination: dublin, weight: 700)
 
+// printing verticies and connected info
 print("=====Vertices=====")
 print(graph.vertices)
 
+// printing edges and connected info
 print("=====Edges=====")
 print(graph.edges())
 
-print("Destinations from London: \(graph.adjacentEdges(forVertex: london))")
+// printing adjacent edges for a specific vertex
+print("Destinations from Amsterdam: \(graph.adjacentEdges(forVertex: amsterdam))")
 
 /*
 class DirectedEdge: Equatable {
@@ -235,7 +258,7 @@ print("Destinations from London: \(graph.adjacentEdges(forVertex: london))")
 */
 </string>
 			<key>ModifiedRange</key>
-			<string>{0, 7453}</string>
+			<string>{0, 8616}</string>
 			<key>OriginalContent</key>
 			<string>
 </string>
