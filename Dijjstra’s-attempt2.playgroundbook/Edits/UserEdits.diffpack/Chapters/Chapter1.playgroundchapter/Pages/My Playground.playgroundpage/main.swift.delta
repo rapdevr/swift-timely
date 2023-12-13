@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>class Vertex&lt;Element: Equatable&gt;: CustomStringConvertible {
+    var value: Element
+    private(set) var adjacentEdges: [DirectedEdge&lt;Element&gt;] = []
+
+    init(_ value: Element) {
+        self.value = value
+    }
+
+    func addEdge(_ edge: DirectedEdge&lt;Element&gt;) {
+        self.adjacentEdges.append(edge)
+    }
+
+    func edgeForDestination(_ destination: Vertex&lt;Element&gt;) -&gt; DirectedEdge&lt;Element&gt;? {
+        return adjacentEdges.first { $0.destination == destination }
+    }
+
+    var description: String {
+        let edgesDescription = adjacentEdges.map { $0.description }.joined(separator: ", ")
+        return "[Vertex]: \(value) | [Adjacent Edges]: [\(edgesDescription)]"
+    }
+}
+
+extension Vertex: Equatable {
+    static func ==(lhs: Vertex, rhs: Vertex) -&gt; Bool {
+        return lhs.value == rhs.value &amp;&amp; lhs.adjacentEdges == rhs.adjacentEdges
+    }
+}
+
+class DirectedEdge&lt;Element: Equatable&gt;: CustomStringConvertible {
+    var source: Vertex&lt;Element&gt;
+    var destination: Vertex&lt;Element&gt;
+    var weight: Double
+
+    init(source: Vertex&lt;Element&gt;, destination: Vertex&lt;Element&gt;, weight: Double) {
+        self.source = source
+        self.destination = destination
+        self.weight = weight
+    }
+
+    var description: String {
+        return "[Edge] [Destination]: \(destination.value) - [Weight]: \(weight)"
+    }
+}
+
+extension DirectedEdge: Equatable {
+    static func ==(lhs: DirectedEdge, rhs: DirectedEdge) -&gt; Bool {
+        return lhs.source == rhs.source &amp;&amp;
+            lhs.destination == rhs.destination &amp;&amp;
+            lhs.weight == rhs.weight
+    }
+}
+
+class EdgeWeightedDigraph&lt;Element: Equatable&gt; {
+    private(set) var vertices: [Vertex&lt;Element&gt;] = []
+
+    func addVertex(_ vertex: Vertex&lt;Element&gt;) {
+        vertices.append(vertex)
+    }
+
+    func addEdge(source: Vertex&lt;Element&gt;, destination: Vertex&lt;Element&gt;, weight: Double) {
+        if let existingEdge = source.edgeForDestination(destination) {
+            existingEdge.weight = weight
+        } else {
+            let newEdge = DirectedEdge&lt;Element&gt;(source: source, destination: destination, weight: weight)
+            source.addEdge(newEdge)
+        }
+    }
+
+    func adjacentEdges(forVertex vertex: Vertex&lt;Element&gt;) -&gt; [DirectedEdge&lt;Element&gt;] {
+        return vertex.adjacentEdges
+    }
+
+    func edges() -&gt; [DirectedEdge&lt;Element&gt;] {
+        return vertices.flatMap { $0.adjacentEdges }
+    }
+
+    func edgesCount() -&gt; Int {
+        return edges().count
+    }
+
+    func verticesCount() -&gt; Int {
+        return vertices.count
+    }
+}
+
+let dublin = Vertex&lt;String&gt;("Dublin")
+let london = Vertex&lt;String&gt;("London")
+let paris = Vertex&lt;String&gt;("Paris")
+let amsterdam = Vertex&lt;String&gt;("Amsterdam")
+let montreal = Vertex&lt;String&gt;("Montreal")
+let sanFrancisco = Vertex&lt;String&gt;("San Francisco")
+
+let graph = EdgeWeightedDigraph&lt;String&gt;()
+graph.addVertex(dublin)
+graph.addVertex(london)
+graph.addVertex(paris)
+graph.addVertex(amsterdam)
+graph.addVertex(montreal)
+graph.addVertex(sanFrancisco)
+
+graph.addEdge(source: dublin, destination: london, weight: 20)
+graph.addEdge(source: dublin, destination: amsterdam, weight: 25)
+graph.addEdge(source: dublin, destination: paris, weight: 35)
+graph.addEdge(source: london, destination: paris, weight: 10)
+graph.addEdge(source: london, destination: montreal, weight: 200)
+graph.addEdge(source: london, destination: sanFrancisco, weight: 500)
+graph.addEdge(source: paris, destination: amsterdam, weight: 10)
+graph.addEdge(source: paris, destination: sanFrancisco, weight: 400)
+graph.addEdge(source: amsterdam, destination: montreal, weight: 300)
+graph.addEdge(source: amsterdam, destination: sanFrancisco, weight: 450)
+graph.addEdge(source: montreal, destination: sanFrancisco, weight: 200)
+graph.addEdge(source: sanFrancisco, destination: dublin, weight: 700)
+
+print("=====Vertices=====")
+print(graph.vertices)
+
+print("=====Edges=====")
+print(graph.edges())
+
+print("Destinations from London: \(graph.adjacentEdges(forVertex: london))")
+
+/*
+class DirectedEdge: Equatable {
+    static func == (lhs: DirectedEdge, rhs: DirectedEdge) -&gt; Bool {
+        return lhs.source == rhs.source &amp;&amp; lhs.destination == rhs.destination &amp;&amp; lhs.weight == rhs.weight
+    }
+}
+
+class Vertex&lt;Element: Equatable&gt; {
+    var value: Element
+    private(set) var adjacentEdges: [DirectedEdge&lt;Element&gt;] = []
+    
+    init(_ value: Element) {
+        self.value = value
+    }
+    
+    func addEdge(_ edge: DirectedEdge&lt;Element&gt;) {
+        self.adjacentEdges.append(edge)
+    }
+    
+    func edgeForDestination(_ destination: Vertex&lt;Element&gt;) -&gt; DirectedEdge&lt;Element&gt;? {
+        return adjacentEdges.filter { $0.destination == destination }.first
+    }
+        
+}
+
+extension Vertex: Equatable {
+        static func == (lhs: Vertex, rhs: Vertex) -&gt; Bool {
+            return lhs.value == rhs.value &amp;&amp; lhs.adjacentEdges == rhs.adjacentEdges
+        }
+    }
+
+
+class EdgeWeightedDigraph&lt;Element: Equatable&gt; {
+    private(set) var vertices: [Vertex&lt;Element&gt;] = []
+    
+    func addVertex(_ vertex: Vertex&lt;Element&gt;) {
+        vertices.append(vertex)
+    }
+    
+    // This function assumes that the sources and destination vertices are in the vertices array
+    func addEdge(source: Vertex&lt;Element&gt;, destination: Vertex&lt;Element&gt;, weight: Double) {
+        // If an existing edge is found, just update the weight
+        if let existingEdge = source.edgeForDestination(destination) {
+            existingEdge.weight = weight
+        } else {
+            let newEdge = DirectedEdge&lt;Element&gt;(source: source, destination: source.addEdge(newEdge))
+        }
+    }
+    
+    func adjacentEdges(forVertex vertex: Vertex&lt;Element&gt;) -&gt; [DirectedEdge&lt;Element&gt;] {
+        return vertex.adjacentEdges
+    }
+    
+    func edges() -&gt; [DirectedEdge&lt;Element&gt;] {
+        return vertices
+            .reduce([DirectedEdge&lt;Element&gt;]()) {
+                (result, vertex) -&gt; [DirectedEdge&lt;Element&gt;] in
+                 return result + vertex.adjacentEdges
+            }
+    }
+    
+    func edgesCount() -&gt; Int {
+        return edgesCount().count
+    }
+    
+    func verticesCount() -&gt; Int {
+        return vertices.count
+    }
+}
+
+let dublin = Vertex&lt;String&gt;("Dublin")
+let london = Vertex&lt;String&gt;("London")
+let paris = Vertex&lt;String&gt;("Paris")
+let amsterdam = Vertex&lt;String&gt;("Amsterdam")
+let montreal = Vertex&lt;String&gt;("Montreal")
+let sanFransisco = Vertex&lt;String&gt;("San Francision")
+
+let graph = EdgeWeightedDigraph&lt;String&gt;()
+// adding the vertices
+graph.addVertex(dublin)
+graph.addVertex(london)
+graph.addVertex(paris)
+graph.addVertex(amsterdam)
+graph.addVertex(montreal)
+graph.addVertex(sanFransisco)
+
+graph.addEdge(source: dublin, destination: london, weight: 20)
+graph.addEdge(source: dublin, destination: amsterdam, weight: 25)
+graph.addEdge(source: dublin, destination: paris, weight: 35)
+graph.addEdge(source: london, destination: paris, weight: 10)
+graph.addEdge(source: london, destination: montreal, weight: 200)
+graph.addEdge(source: london, destination: sanFransisco, weight: 500)
+graph.addEdge(source: paris, destination: amsterdam, weight: 10)
+graph.addEdge(source: paris, destination: sanFransisco, weight: 400)
+graph.addEdge(source: amsterdam, destination: montreal, weight: 300)
+graph.addEdge(source: amsterdam, destination: sanFransisco, weight: 200)
+graph.addEdge(source: sanFransisco, destination: dublin, weight: 700)
+
+print("====Vertices====")
+print(graph.vertices)
+
+print("====Edges====")
+print(graph.edges())
+
+print("Destinations from London: \(graph.adjacentEdges(forVertex: london))")
+*/
+</string>
+			<key>ModifiedRange</key>
+			<string>{0, 7453}</string>
+			<key>OriginalContent</key>
+			<string>
+</string>
+			<key>OriginalRange</key>
+			<string>{0, 1}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>
