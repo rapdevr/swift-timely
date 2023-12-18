@@ -11,6 +11,11 @@ import AuthenticationServices
 
 class ViewController: UIViewController, ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        // specify the presentation anchor
+        return self.view.window!
+    }
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
@@ -50,7 +55,9 @@ class ViewController: UIViewController, ASAuthorizationControllerDelegate, ASAut
             // User's name is available in cred
             let name = appleIDCred.fullName
             
-            
+            let firstName = name?.givenName
+            let lastName = name?.familyName
+            }
             
         }
     }
@@ -59,14 +66,6 @@ class ViewController: UIViewController, ASAuthorizationControllerDelegate, ASAut
         // handle any errors
         print("Auth error! \(error.localizedDescription)")
     }
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        // specify the presentation anchor
-        return self.view.window!
-    }
-    
-    
-}
 
 struct ContentView: View {
     var body: some View {
