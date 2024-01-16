@@ -9,7 +9,7 @@ import Foundation
 
 // function to get time and return appropriate keyword.
 // used in conjunction with MenuView items.
-func getTime() -> String {
+func getGreeting() -> String {
     // creates an instance of Date.
     let currentDate = Date()
     // gets creates an instance of calendar with properties like hour.
@@ -27,4 +27,20 @@ func getTime() -> String {
         return "Evening"
     }
     
+}
+
+func getTime() -> String {
+    let currentDate = Date()
+    let calendar = Calendar.current
+    let min = calendar.component(.minute, from: currentDate)
+    var minute: String = ""
+    
+    if  min < 10 {
+        minute = "0\(min)"
+    }
+    else {
+        minute = "\(min)"
+    }
+    
+    return "\(calendar.component(.hour, from: currentDate)):\(minute)"
 }

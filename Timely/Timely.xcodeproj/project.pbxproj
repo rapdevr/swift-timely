@@ -14,7 +14,9 @@
 		5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38412B4300BF00FD164F /* LineStatus.swift */; };
 		5B3E38442B4300D800FD164F /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38432B4300D800FD164F /* Disruption.swift */; };
 		5B3E38462B4314C500FD164F /* ButtonEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38452B4314C500FD164F /* ButtonEffect.swift */; };
-		5B3E38502B43643400FD164F /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E384F2B43643400FD164F /* DetailView.swift */; };
+		5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA22B55346500947DDE /* ColourHelper.swift */; };
+		5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA42B5546D300947DDE /* DetailView.swift */; };
+		5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA62B554B4000947DDE /* PlanView.swift */; };
 		5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29812B29A82400BEA1BF /* TimelyApp.swift */; };
 		5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29832B29A82400BEA1BF /* MenuView.swift */; };
 		5BCD29862B29A82700BEA1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29852B29A82700BEA1BF /* Assets.xcassets */; };
@@ -29,7 +31,9 @@
 		5B3E38412B4300BF00FD164F /* LineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStatus.swift; sourceTree = "<group>"; };
 		5B3E38432B4300D800FD164F /* Disruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
 		5B3E38452B4314C500FD164F /* ButtonEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEffect.swift; sourceTree = "<group>"; };
-		5B3E384F2B43643400FD164F /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5B7EDCA22B55346500947DDE /* ColourHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourHelper.swift; sourceTree = "<group>"; };
+		5B7EDCA42B5546D300947DDE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5B7EDCA62B554B4000947DDE /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		5BCD297E2B29A82400BEA1BF /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCD29812B29A82400BEA1BF /* TimelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelyApp.swift; sourceTree = "<group>"; };
 		5BCD29832B29A82400BEA1BF /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
@@ -52,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				5BCD29832B29A82400BEA1BF /* MenuView.swift */,
-				5B3E384F2B43643400FD164F /* DetailView.swift */,
+				5B7EDCA42B5546D300947DDE /* DetailView.swift */,
+				5B7EDCA62B554B4000947DDE /* PlanView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -81,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */,
+				5B7EDCA22B55346500947DDE /* ColourHelper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -204,13 +210,15 @@
 				5B3E38442B4300D800FD164F /* Disruption.swift in Sources */,
 				5B3E38462B4314C500FD164F /* ButtonEffect.swift in Sources */,
 				5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */,
-				5B3E38502B43643400FD164F /* DetailView.swift in Sources */,
 				5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */,
 				5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */,
+				5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */,
 				5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */,
 				5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */,
 				5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */,
 				5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */,
+				5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */,
+				5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
