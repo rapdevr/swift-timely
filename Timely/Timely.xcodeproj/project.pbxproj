@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B26C07C2B7CE8BC0051908A /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07B2B7CE8BC0051908A /* GraphService.swift */; };
+		5B26C07E2B7CE9130051908A /* GraphConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07D2B7CE9130051908A /* GraphConstructor.swift */; };
+		5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07F2B7CF89D0051908A /* undergroundLines.swift */; };
 		5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */; };
 		5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38312B3DEE6200FD164F /* DataService.swift */; };
 		5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E383D2B43003800FD164F /* TubeLine.swift */; };
@@ -21,11 +24,14 @@
 		5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29832B29A82400BEA1BF /* MenuView.swift */; };
 		5BCD29862B29A82700BEA1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29852B29A82700BEA1BF /* Assets.xcassets */; };
 		5BCD29892B29A82700BEA1BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */; };
-		5BFFD45C2B7AB75F004EED85 /* StationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFD45B2B7AB75F004EED85 /* StationNames.swift */; };
+		5BFFD45C2B7AB75F004EED85 /* undergroundStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */; };
 		5BFFD45F2B7AB8BC004EED85 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5B26C07B2B7CE8BC0051908A /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
+		5B26C07D2B7CE9130051908A /* GraphConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphConstructor.swift; sourceTree = "<group>"; };
+		5B26C07F2B7CF89D0051908A /* undergroundLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundLines.swift; sourceTree = "<group>"; };
 		5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		5B3E38312B3DEE6200FD164F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B3E383D2B43003800FD164F /* TubeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLine.swift; sourceTree = "<group>"; };
@@ -41,7 +47,7 @@
 		5BCD29832B29A82400BEA1BF /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5BCD29852B29A82700BEA1BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5BFFD45B2B7AB75F004EED85 /* StationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNames.swift; sourceTree = "<group>"; };
+		5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundStations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				5B3E38312B3DEE6200FD164F /* DataService.swift */,
+				5B26C07B2B7CE8BC0051908A /* GraphService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			children = (
 				5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */,
 				5B7EDCA22B55346500947DDE /* ColourHelper.swift */,
+				5B26C07D2B7CE9130051908A /* GraphConstructor.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -161,7 +169,8 @@
 		5BFFD45A2B7AB73E004EED85 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				5BFFD45B2B7AB75F004EED85 /* StationNames.swift */,
+				5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */,
+				5B26C07F2B7CF89D0051908A /* undergroundLines.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -245,13 +254,16 @@
 				5B3E38442B4300D800FD164F /* Disruption.swift in Sources */,
 				5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */,
 				5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */,
+				5B26C07E2B7CE9130051908A /* GraphConstructor.swift in Sources */,
 				5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */,
 				5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */,
 				5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */,
 				5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */,
 				5BA978122B62AB6D00A42542 /* StationNode.swift in Sources */,
+				5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */,
 				5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */,
-				5BFFD45C2B7AB75F004EED85 /* StationNames.swift in Sources */,
+				5BFFD45C2B7AB75F004EED85 /* undergroundStations.swift in Sources */,
+				5B26C07C2B7CE8BC0051908A /* GraphService.swift in Sources */,
 				5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */,
 				5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */,
 				5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */,
