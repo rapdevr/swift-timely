@@ -54,7 +54,7 @@ class DataService: ObservableObject {
         }
     }
 
-    // Example usage: Fetch JSON data from the URL and parse it
+    // Fetch JSON data from the URL and parse it
     func updateService() {
         let apiUrlString = "https://api.tfl.gov.uk/Line/Mode/tube,%20elizabeth-line/Status?detail=false"
 
@@ -73,7 +73,7 @@ class DataService: ObservableObject {
 // For backward compatibility
 let tubeLineViewModel = DataService()
 
-// Example usage: Fetch JSON data from the URL and parse it
+// Call the update service and refresh contents on LinesArray
 func updateService() {
     tubeLineViewModel.tubeLinesArray.removeAll()
     tubeLineViewModel.updateService()

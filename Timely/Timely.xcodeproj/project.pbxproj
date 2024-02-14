@@ -13,14 +13,16 @@
 		5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E383F2B43007C00FD164F /* TubeLineData.swift */; };
 		5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38412B4300BF00FD164F /* LineStatus.swift */; };
 		5B3E38442B4300D800FD164F /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38432B4300D800FD164F /* Disruption.swift */; };
-		5B3E38462B4314C500FD164F /* ButtonEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38452B4314C500FD164F /* ButtonEffect.swift */; };
 		5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA22B55346500947DDE /* ColourHelper.swift */; };
 		5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA42B5546D300947DDE /* DetailView.swift */; };
 		5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA62B554B4000947DDE /* PlanView.swift */; };
+		5BA978122B62AB6D00A42542 /* StationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA978112B62AB6D00A42542 /* StationNode.swift */; };
 		5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29812B29A82400BEA1BF /* TimelyApp.swift */; };
 		5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29832B29A82400BEA1BF /* MenuView.swift */; };
 		5BCD29862B29A82700BEA1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29852B29A82700BEA1BF /* Assets.xcassets */; };
 		5BCD29892B29A82700BEA1BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */; };
+		5BFFD45C2B7AB75F004EED85 /* StationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFD45B2B7AB75F004EED85 /* StationNames.swift */; };
+		5BFFD45F2B7AB8BC004EED85 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,15 +32,16 @@
 		5B3E383F2B43007C00FD164F /* TubeLineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineData.swift; sourceTree = "<group>"; };
 		5B3E38412B4300BF00FD164F /* LineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStatus.swift; sourceTree = "<group>"; };
 		5B3E38432B4300D800FD164F /* Disruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
-		5B3E38452B4314C500FD164F /* ButtonEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEffect.swift; sourceTree = "<group>"; };
 		5B7EDCA22B55346500947DDE /* ColourHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourHelper.swift; sourceTree = "<group>"; };
 		5B7EDCA42B5546D300947DDE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5B7EDCA62B554B4000947DDE /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
+		5BA978112B62AB6D00A42542 /* StationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNode.swift; sourceTree = "<group>"; };
 		5BCD297E2B29A82400BEA1BF /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCD29812B29A82400BEA1BF /* TimelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelyApp.swift; sourceTree = "<group>"; };
 		5BCD29832B29A82400BEA1BF /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5BCD29852B29A82700BEA1BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5BFFD45B2B7AB75F004EED85 /* StationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,12 +49,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BFFD45F2B7AB8BC004EED85 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B26C0782B7C23130051908A /* StreamJSON */ = {
+			isa = PBXGroup;
+			children = (
+				5B3E383D2B43003800FD164F /* TubeLine.swift */,
+				5B3E383F2B43007C00FD164F /* TubeLineData.swift */,
+				5B3E38412B4300BF00FD164F /* LineStatus.swift */,
+				5B3E38432B4300D800FD164F /* Disruption.swift */,
+			);
+			path = StreamJSON;
+			sourceTree = "<group>";
+		};
+		5B26C0792B7C23350051908A /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				5BA978112B62AB6D00A42542 /* StationNode.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		5B26C07A2B7C238A0051908A /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		5B3E384B2B43632200FD164F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -65,11 +95,9 @@
 		5B3E384C2B43634000FD164F /* Structs */ = {
 			isa = PBXGroup;
 			children = (
-				5B3E383D2B43003800FD164F /* TubeLine.swift */,
-				5B3E383F2B43007C00FD164F /* TubeLineData.swift */,
-				5B3E38412B4300BF00FD164F /* LineStatus.swift */,
-				5B3E38432B4300D800FD164F /* Disruption.swift */,
-				5B3E38452B4314C500FD164F /* ButtonEffect.swift */,
+				5B26C07A2B7C238A0051908A /* Misc */,
+				5B26C0792B7C23350051908A /* Graph */,
+				5B26C0782B7C23130051908A /* StreamJSON */,
 			);
 			path = Structs;
 			sourceTree = "<group>";
@@ -91,13 +119,6 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		5BA605232B489022000B52A5 /* fonts */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = fonts;
-			sourceTree = "<group>";
-		};
 		5BCD29752B29A82400BEA1BF = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +138,8 @@
 		5BCD29802B29A82400BEA1BF /* Timely */ = {
 			isa = PBXGroup;
 			children = (
-				5BA605232B489022000B52A5 /* fonts */,
 				5B3E384E2B43637900FD164F /* Helper */,
+				5BFFD45A2B7AB73E004EED85 /* Data */,
 				5B3E384D2B43636F00FD164F /* Services */,
 				5B3E384C2B43634000FD164F /* Structs */,
 				5B3E384B2B43632200FD164F /* Views */,
@@ -137,6 +158,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5BFFD45A2B7AB73E004EED85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5BFFD45B2B7AB75F004EED85 /* StationNames.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +182,9 @@
 			dependencies = (
 			);
 			name = Timely;
+			packageProductDependencies = (
+				5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */,
+			);
 			productName = Timely;
 			productReference = 5BCD297E2B29A82400BEA1BF /* Timely.app */;
 			productType = "com.apple.product-type.application";
@@ -181,6 +213,9 @@
 				Base,
 			);
 			mainGroup = 5BCD29752B29A82400BEA1BF;
+			packageReferences = (
+				5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 5BCD297F2B29A82400BEA1BF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,14 +243,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B3E38442B4300D800FD164F /* Disruption.swift in Sources */,
-				5B3E38462B4314C500FD164F /* ButtonEffect.swift in Sources */,
 				5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */,
 				5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */,
 				5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */,
 				5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */,
 				5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */,
 				5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */,
+				5BA978122B62AB6D00A42542 /* StationNode.swift in Sources */,
 				5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */,
+				5BFFD45C2B7AB75F004EED85 /* StationNames.swift in Sources */,
 				5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */,
 				5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */,
 				5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */,
@@ -355,12 +391,13 @@
 				DEVELOPMENT_TEAM = E5469RCMSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,12 +422,13 @@
 				DEVELOPMENT_TEAM = E5469RCMSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -426,6 +464,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5BCD29762B29A82400BEA1BF /* Project object */;
 }

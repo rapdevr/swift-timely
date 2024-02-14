@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     let tubeLine: TubeLine
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
 
     var body: some View {
         
@@ -29,7 +30,6 @@ struct DetailView: View {
                     .padding(.horizontal, 4.0)
                     .background(
                             Rectangle()
-                                .foregroundColor(.white)
                                 .cornerRadius(10)
                                 .overlay(
                                     Rectangle()
@@ -37,8 +37,8 @@ struct DetailView: View {
                                         
                                 )
                         )
-                    .foregroundColor(.white)
-                    .padding(/*@START_MENU_TOKEN@*/.vertical, 2.0/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(colorScheme == .dark ? Color.black : .white)
+                    .padding(.vertical, 2.0)
                     }
             
             if tubeLine.reason != nil {
@@ -47,18 +47,24 @@ struct DetailView: View {
                     if tubeLine.severityStatusDescription == "Good Service" {
                         Text(tubeLine.severityStatusDescription)
                             .foregroundStyle(.green)
+                            .padding(.bottom)
                     }
                     else if tubeLine.severityStatusDescription == "Minor Delays" {
                         Text(tubeLine.severityStatusDescription)
-                            .foregroundStyle(.yellow)
+                            .foregroundStyle(.orange)
+                            .padding(.bottom)
                         
+                    }
+                    else if tubeLine.severityStatusDescription == "Part Closure"{
+                          Text(tubeLine.severityStatusDescription)
+                              .foregroundStyle(Color("crimson"))
+                              .padding(.bottom)
                     }
                     else {
                         Text(tubeLine.severityStatusDescription)
                             .foregroundStyle(.red)
+                            .padding(.bottom)
                     }
-                    
-                    Spacer()
                     
                     Text(tubeLine.reason ?? "")
                         .padding()
@@ -70,7 +76,7 @@ struct DetailView: View {
                     Spacer()
                 }
                 .background(Rectangle()
-                        .foregroundColor(.white)
+                    .foregroundColor(colorScheme == .dark ? Color.black : .white)
                         .cornerRadius(10))
                 .padding()
             }
@@ -85,6 +91,10 @@ struct DetailView: View {
                         .foregroundStyle(.yellow)
                     
                 }
+                else if tubeLine.severityStatusDescription == "Part Closure"{
+                      Text(tubeLine.severityStatusDescription)
+                          .foregroundStyle(Color("crimson"))
+                }
                 else {
                     Text(tubeLine.severityStatusDescription)
                         .foregroundStyle(.red)
@@ -98,6 +108,8 @@ struct DetailView: View {
             Spacer()
             
         }
+        .foregroundColor(colorScheme == .dark ? Color.black : .white)
         .navigationBarTitle("Tube Details", displayMode: .inline)
+        
     }
 }
