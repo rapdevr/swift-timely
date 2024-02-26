@@ -16,6 +16,7 @@ func normalise(input:String) -> String {
     tempStr = input.replacingOccurrences(of: " ", with: "")
     tempStr = input.replacingOccurrences(of: "&", with: "")
     tempStr = input.replacingOccurrences(of: "-", with: "")
+    tempStr = input.replacingOccurrences(of: ". ", with: "")
     return tempStr
 }
 

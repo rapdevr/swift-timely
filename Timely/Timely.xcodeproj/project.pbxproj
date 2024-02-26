@@ -10,6 +10,7 @@
 		5B26C07C2B7CE8BC0051908A /* GraphService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07B2B7CE8BC0051908A /* GraphService.swift */; };
 		5B26C07E2B7CE9130051908A /* GraphConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07D2B7CE9130051908A /* GraphConstructor.swift */; };
 		5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07F2B7CF89D0051908A /* undergroundLines.swift */; };
+		5B26C0822B894A120051908A /* undergroundZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C0812B894A120051908A /* undergroundZones.swift */; };
 		5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */; };
 		5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38312B3DEE6200FD164F /* DataService.swift */; };
 		5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E383D2B43003800FD164F /* TubeLine.swift */; };
@@ -32,6 +33,7 @@
 		5B26C07B2B7CE8BC0051908A /* GraphService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphService.swift; sourceTree = "<group>"; };
 		5B26C07D2B7CE9130051908A /* GraphConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphConstructor.swift; sourceTree = "<group>"; };
 		5B26C07F2B7CF89D0051908A /* undergroundLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundLines.swift; sourceTree = "<group>"; };
+		5B26C0812B894A120051908A /* undergroundZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundZones.swift; sourceTree = "<group>"; };
 		5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		5B3E38312B3DEE6200FD164F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B3E383D2B43003800FD164F /* TubeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLine.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 			children = (
 				5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */,
 				5B26C07F2B7CF89D0051908A /* undergroundLines.swift */,
+				5B26C0812B894A120051908A /* undergroundZones.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */,
 				5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */,
 				5BFFD45C2B7AB75F004EED85 /* undergroundStations.swift in Sources */,
+				5B26C0822B894A120051908A /* undergroundZones.swift in Sources */,
 				5B26C07C2B7CE8BC0051908A /* GraphService.swift in Sources */,
 				5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */,
 				5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */,

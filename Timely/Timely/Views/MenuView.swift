@@ -21,8 +21,8 @@ struct MenuView: View {
     }
     
     var body: some View {
-        NavigationView {
-            TabView {
+        TabView {
+            NavigationView {
                 VStack {
                     
                     // HStack for the Title and subtitle
@@ -116,16 +116,16 @@ struct MenuView: View {
                     
                 }
                 
-                .tabItem {
-                    Label("Status", systemImage: "clock.fill")
-                }
-                
-                PlanView().tabItem {
-                    Label("Plan", systemImage: "train.side.front.car")
-                }
-                
             }
             .background(Color(red: 0.949, green: 0.949, blue: 0.971))
+        
+            .tabItem {
+                Label("Status", systemImage: "clock.fill")
+            }
+            
+            PlanView().tabItem {
+                Label("Plan", systemImage: "train.side.front.car")
+            }
             
         }
     }

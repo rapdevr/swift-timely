@@ -28,7 +28,7 @@ struct PlanView: View {
         VStack {
             HStack {
                 Text("Plan a journey:")
-                    .font(.largeTitle)
+                    .font(.title)
                     .bold()
                     .multilineTextAlignment(.leading)
                     .padding(.leading)  // Apply here for the heading
@@ -119,7 +119,7 @@ struct PlanView: View {
                         Image(systemName: "arrow.up.arrow.down.circle.fill")
                             .font(.largeTitle)
                             .symbolRenderingMode(.palette)
-                            .foregroundStyle(.black, colorScheme == .light ? Color(red: 0.011764705882352941, green: 0.027450980392156862, blue: 0.10980392156862745) : Color.white)
+                            .foregroundStyle(colorScheme == .light ? Color(red: 0.011764705882352941, green: 0.027450980392156862, blue: 0.10980392156862745) : Color.white)
                             .accentColor(.green)
 
                     }
