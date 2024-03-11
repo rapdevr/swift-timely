@@ -1,23 +1,18 @@
 import SwiftUI
 import UIKit
 
-
 struct MenuView: View {
     
-    @State private var origin: String = ""
-    @State private var destination: String = ""
     @State var LinesArray: [TubeLine] = []
     @State var time: String?
-    @Environment(\.colorScheme) var colorScheme: ColorScheme
-    
-    
     var dataService: DataService = DataService()
         
     func RefreshList() {
         LinesArray.removeAll()
-        dataService.updateService()
+        dataService.UpdateService()
         LinesArray = dataService.tubeLinesArray
-        time = "Refreshed at: " + getTime()
+        time = "Refreshed at: " + GetTime()
+        GraphConstructor().BuildGraph()
     }
     
     var body: some View {
@@ -28,29 +23,36 @@ struct MenuView: View {
                     // HStack for the Title and subtitle
                     HStack {
                         VStack (alignment: .leading) {
-                            Text("Good \(getGreeting())!")
-                                .font(.largeTitle)
-                                .foregroundColor(colorScheme == .light ? Color(red: 0.011764705882352941, green: 0.027450980392156862, blue: 0.10980392156862745) : Color.white)
-                                .bold()
+                            Text("Good \(GetGreeting())!")
+                                .font(Font.custom("London Tube", size: 32, relativeTo: .largeTitle))
+                                .foregroundStyle(.white)
                                 .padding(.top, -13.0)
-                            Text("Live Tube Status:")
-                                .font(.title)
-                                .fontWeight(.bold)
-                                .foregroundColor(colorScheme == .light ? Color(red: 0.0, green: 0.098, blue: 0.655) : .white)
+                            Text("Latest updates on the tube:")
+                                .font(Font.custom("London Tube", size: 24, relativeTo: .title))
+                                .foregroundColor(Color(.white))
                             
                         }
                         .padding(.top, 15.0)
-                        
+                        .padding(.leading)
                         Spacer()
                         
                     }
-                    .padding(.leading, 15.0)
-                    .padding(/*@START_MENU_TOKEN@*/.top, 5.0)
+                    .padding(.bottom)
+                    .background(Color("johnstblue"))
                     HStack {
                         Button(action: {
                             RefreshList()
                         }, label: {
                             Text("Refresh")
+                                .font(Font.custom("London Tube", size: 18))
+                                .foregroundColor(.johnstblue)
+                                .padding([.leading, .trailing])
+                                .padding(.top, 4)
+                                .padding(.bottom, 4)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(Color(.johnstblue), lineWidth: 1)
+                                )
                         })
                         .foregroundColor(.blue)
                         .padding(.leading)
@@ -59,6 +61,7 @@ struct MenuView: View {
                         
                         Text(time ?? "Not updated")
                             .padding(.trailing)
+                            .font(Font.custom("London Tube", size: 18))
                         
                         
                     }
@@ -75,7 +78,7 @@ struct MenuView: View {
                                     .frame(height: 25)
                                     .cornerRadius(10)
                                 Text(line.name)
-                                    .bold()
+                                    .font(Font.custom("London Tube", size: 18))
                                 
                                 VStack {
                                     
@@ -83,19 +86,23 @@ struct MenuView: View {
                                         Spacer()
                                         if line.severityStatusDescription == "Good Service" {
                                             Text(line.severityStatusDescription)
+                                                .font(Font.custom("London Tube", size: 18))
                                                 .foregroundStyle(.green)
                                         }
                                         else if line.severityStatusDescription == "Minor Delays" {
                                             Text(line.severityStatusDescription)
+                                                .font(Font.custom("London Tube", size: 18))
                                                 .foregroundStyle(.orange)
                                             
                                         }
                                         else if line.severityStatusDescription == "Part Closure"{
                                             Text(line.severityStatusDescription)
+                                                .font(Font.custom("London Tube", size: 18))
                                                 .foregroundStyle(Color("crimson"))
                                         }
                                         else {
                                             Text(line.severityStatusDescription)
+                                                .font(Font.custom("London Tube", size: 18))
                                                 .foregroundStyle(.red)
                                         }
                                     }
@@ -107,24 +114,32 @@ struct MenuView: View {
                     
                     
                 }
-                .background(colorScheme == .dark ? Color.black : Color(red: 0.949, green: 0.949, blue: 0.971))
-                .contentShape(Rectangle())
+                .background(Color(.grey10))
                 .padding(.top, -8.0)
                 .onAppear {
                     LinesArray.removeAll()  // Remove all elements before refreshing the list
                     RefreshList()
-                    
                 }
                 
             }
-            .background(Color(red: 0.949, green: 0.949, blue: 0.971))
+            
+            .tabViewStyle(PageTabViewStyle())
         
             .tabItem {
-                Label("Status", systemImage: "clock.fill")
+                Text("Status")
+                    .font(Font.custom("London Tube", size: 12))
+                Image(systemName: "clock.fill")
+            }
+            
+            SearchView().tabItem {
+                Label("Search", systemImage: "magnifyingglass.circle.fill")
+                    .font(Font.custom("London Tube", size: 12))
             }
             
             PlanView().tabItem {
-                Label("Plan", systemImage: "train.side.front.car")
+                Text("Plan")
+                    .font(Font.custom("London Tube", size: 12))
+                Image(systemName: "train.side.front.car")
             }
             
         }

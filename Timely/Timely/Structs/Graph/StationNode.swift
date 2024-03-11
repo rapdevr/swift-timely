@@ -11,7 +11,7 @@ import Foundation
 struct Station {
     let name: String
     let nameID: String
-    var connectedTo: [String: Int] // [Connected station nameID: Weight]
+    var connectedTo: [String: Double] // [Connected station nameID: Weight]
     var servedBy: [String] // Underground lines that service the station
 
     init(name: String, nameID: String, servedBy: [String]) {
@@ -22,7 +22,7 @@ struct Station {
     }
 
     // Function to add a connection to another station with a specified weight
-    mutating func addConnection(to stationNameID: String, withWeight weight: Int) {
+    mutating func addConnection(to stationNameID: String, withWeight weight: Double) {
         connectedTo[stationNameID] = weight
     }
 }

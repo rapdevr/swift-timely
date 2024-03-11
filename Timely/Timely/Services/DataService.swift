@@ -5,7 +5,7 @@ class DataService: ObservableObject {
     var tubeLinesArray: [TubeLine] = []
 
     // Function to fetch JSON data from the given URL
-    func fetchJSONData(from url: URL, completion: @escaping (Data?) -> Void) {
+    private func FetchJSONData(from url: URL, completion: @escaping (Data?) -> Void) {
         URLSession.shared.dataTask(with: url) { (data, _, error) in
             if let error = error {
                 print("Error fetching data: \(error)")
@@ -18,7 +18,7 @@ class DataService: ObservableObject {
     }
 
     // Function to parse JSON and create an array of TubeLine objects
-    func parseJSON(jsonData: Data) {
+    private func ParseJSON(jsonData: Data) {
         // clear existing data before updating
         tubeLinesArray.removeAll()
         
@@ -37,7 +37,6 @@ class DataService: ObservableObject {
                        let disruption = disruptions.first?.description {
                         disruptionDescription = disruption
                     }
-                    print(name, lineStatus, severityValue, severityStatusDescription, disruptionDescription)
                     
                     let reason = lineStatus.reason
                     
@@ -55,16 +54,16 @@ class DataService: ObservableObject {
     }
 
     // Fetch JSON data from the URL and parse it
-    func updateService() {
+    func UpdateService() {
         let apiUrlString = "https://api.tfl.gov.uk/Line/Mode/tube,%20elizabeth-line/Status?detail=false"
 
         if let apiUrl = URL(string: apiUrlString) {
-            fetchJSONData(from: apiUrl) { data in
+            FetchJSONData(from: apiUrl) { data in
                 guard let jsonData = data else {
                     return
                 }
 
-                self.parseJSON(jsonData: jsonData)
+                self.ParseJSON(jsonData: jsonData)
             }
         }
     }
@@ -76,5 +75,5 @@ let tubeLineViewModel = DataService()
 // Call the update service and refresh contents on LinesArray
 func updateService() {
     tubeLineViewModel.tubeLinesArray.removeAll()
-    tubeLineViewModel.updateService()
+    tubeLineViewModel.UpdateService()
 }

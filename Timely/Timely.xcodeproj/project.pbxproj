@@ -11,22 +11,26 @@
 		5B26C07E2B7CE9130051908A /* GraphConstructor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07D2B7CE9130051908A /* GraphConstructor.swift */; };
 		5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C07F2B7CF89D0051908A /* undergroundLines.swift */; };
 		5B26C0822B894A120051908A /* undergroundZones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C0812B894A120051908A /* undergroundZones.swift */; };
-		5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */; };
+		5B26C0852B8F3D350051908A /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C0842B8F3D350051908A /* SearchView.swift */; };
+		5B26C0872B94E64E0051908A /* undergroundStationsOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B26C0862B94E64E0051908A /* undergroundStationsOld.swift */; };
 		5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38312B3DEE6200FD164F /* DataService.swift */; };
 		5B3E383E2B43003800FD164F /* TubeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E383D2B43003800FD164F /* TubeLine.swift */; };
 		5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E383F2B43007C00FD164F /* TubeLineData.swift */; };
 		5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38412B4300BF00FD164F /* LineStatus.swift */; };
 		5B3E38442B4300D800FD164F /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3E38432B4300D800FD164F /* Disruption.swift */; };
+		5B4FC10E2B97C42E00333FE2 /* LondonTube-MABx.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B4FC10D2B97C42D00333FE2 /* LondonTube-MABx.ttf */; };
+		5B4FC1102B97DDEC00333FE2 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4FC10F2B97DDEC00333FE2 /* ToggleButton.swift */; };
 		5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA22B55346500947DDE /* ColourHelper.swift */; };
 		5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA42B5546D300947DDE /* DetailView.swift */; };
 		5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B7EDCA62B554B4000947DDE /* PlanView.swift */; };
 		5BA978122B62AB6D00A42542 /* StationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA978112B62AB6D00A42542 /* StationNode.swift */; };
+		5BB00C952B9F161400020511 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BB00C932B9F161400020511 /* CoreData.xcdatamodeld */; };
 		5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29812B29A82400BEA1BF /* TimelyApp.swift */; };
 		5BCD29842B29A82400BEA1BF /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCD29832B29A82400BEA1BF /* MenuView.swift */; };
 		5BCD29862B29A82700BEA1BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29852B29A82700BEA1BF /* Assets.xcassets */; };
 		5BCD29892B29A82700BEA1BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */; };
+		5BDFBF812B986CAF00F9A6CA /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BDFBF802B986CAF00F9A6CA /* TimeHelper.swift */; };
 		5BFFD45C2B7AB75F004EED85 /* undergroundStations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */; };
-		5BFFD45F2B7AB8BC004EED85 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,21 +38,27 @@
 		5B26C07D2B7CE9130051908A /* GraphConstructor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphConstructor.swift; sourceTree = "<group>"; };
 		5B26C07F2B7CF89D0051908A /* undergroundLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundLines.swift; sourceTree = "<group>"; };
 		5B26C0812B894A120051908A /* undergroundZones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundZones.swift; sourceTree = "<group>"; };
-		5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		5B26C0842B8F3D350051908A /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		5B26C0862B94E64E0051908A /* undergroundStationsOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundStationsOld.swift; sourceTree = "<group>"; };
 		5B3E38312B3DEE6200FD164F /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		5B3E383D2B43003800FD164F /* TubeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLine.swift; sourceTree = "<group>"; };
 		5B3E383F2B43007C00FD164F /* TubeLineData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TubeLineData.swift; sourceTree = "<group>"; };
 		5B3E38412B4300BF00FD164F /* LineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineStatus.swift; sourceTree = "<group>"; };
 		5B3E38432B4300D800FD164F /* Disruption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
+		5B4FC1012B97BD8900333FE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5B4FC10D2B97C42D00333FE2 /* LondonTube-MABx.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LondonTube-MABx.ttf"; sourceTree = "<group>"; };
+		5B4FC10F2B97DDEC00333FE2 /* ToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		5B7EDCA22B55346500947DDE /* ColourHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourHelper.swift; sourceTree = "<group>"; };
 		5B7EDCA42B5546D300947DDE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		5B7EDCA62B554B4000947DDE /* PlanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanView.swift; sourceTree = "<group>"; };
 		5BA978112B62AB6D00A42542 /* StationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationNode.swift; sourceTree = "<group>"; };
+		5BB00C942B9F161400020511 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		5BCD297E2B29A82400BEA1BF /* Timely.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timely.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCD29812B29A82400BEA1BF /* TimelyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelyApp.swift; sourceTree = "<group>"; };
 		5BCD29832B29A82400BEA1BF /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
 		5BCD29852B29A82700BEA1BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BCD29882B29A82700BEA1BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5BDFBF802B986CAF00F9A6CA /* TimeHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = undergroundStations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,7 +67,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5BFFD45F2B7AB8BC004EED85 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +95,7 @@
 		5B26C07A2B7C238A0051908A /* Misc */ = {
 			isa = PBXGroup;
 			children = (
+				5B4FC10F2B97DDEC00333FE2 /* ToggleButton.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -96,6 +106,7 @@
 				5BCD29832B29A82400BEA1BF /* MenuView.swift */,
 				5B7EDCA42B5546D300947DDE /* DetailView.swift */,
 				5B7EDCA62B554B4000947DDE /* PlanView.swift */,
+				5B26C0842B8F3D350051908A /* SearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +124,7 @@
 		5B3E384D2B43636F00FD164F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5BDFBF802B986CAF00F9A6CA /* TimeHelper.swift */,
 				5B3E38312B3DEE6200FD164F /* DataService.swift */,
 				5B26C07B2B7CE8BC0051908A /* GraphService.swift */,
 			);
@@ -122,11 +134,18 @@
 		5B3E384E2B43637900FD164F /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5B3E382F2B3DE8BA00FD164F /* TimeHelper.swift */,
 				5B7EDCA22B55346500947DDE /* ColourHelper.swift */,
 				5B26C07D2B7CE9130051908A /* GraphConstructor.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5B4FC10C2B97C3C900333FE2 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				5B4FC10D2B97C42D00333FE2 /* LondonTube-MABx.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 		5BCD29752B29A82400BEA1BF = {
@@ -148,6 +167,8 @@
 		5BCD29802B29A82400BEA1BF /* Timely */ = {
 			isa = PBXGroup;
 			children = (
+				5B4FC10C2B97C3C900333FE2 /* font */,
+				5B4FC1012B97BD8900333FE2 /* Info.plist */,
 				5B3E384E2B43637900FD164F /* Helper */,
 				5BFFD45A2B7AB73E004EED85 /* Data */,
 				5B3E384D2B43636F00FD164F /* Services */,
@@ -174,6 +195,8 @@
 				5BFFD45B2B7AB75F004EED85 /* undergroundStations.swift */,
 				5B26C07F2B7CF89D0051908A /* undergroundLines.swift */,
 				5B26C0812B894A120051908A /* undergroundZones.swift */,
+				5B26C0862B94E64E0051908A /* undergroundStationsOld.swift */,
+				5BB00C932B9F161400020511 /* CoreData.xcdatamodeld */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -195,7 +218,6 @@
 			);
 			name = Timely;
 			packageProductDependencies = (
-				5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */,
 			);
 			productName = Timely;
 			productReference = 5BCD297E2B29A82400BEA1BF /* Timely.app */;
@@ -226,7 +248,6 @@
 			);
 			mainGroup = 5BCD29752B29A82400BEA1BF;
 			packageReferences = (
-				5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
 			);
 			productRefGroup = 5BCD297F2B29A82400BEA1BF /* Products */;
 			projectDirPath = "";
@@ -242,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4FC10E2B97C42E00333FE2 /* LondonTube-MABx.ttf in Resources */,
 				5BCD29892B29A82700BEA1BF /* Preview Assets.xcassets in Resources */,
 				5BCD29862B29A82700BEA1BF /* Assets.xcassets in Resources */,
 			);
@@ -260,10 +282,13 @@
 				5B26C07E2B7CE9130051908A /* GraphConstructor.swift in Sources */,
 				5B3E38422B4300BF00FD164F /* LineStatus.swift in Sources */,
 				5B7EDCA52B5546D300947DDE /* DetailView.swift in Sources */,
+				5BDFBF812B986CAF00F9A6CA /* TimeHelper.swift in Sources */,
 				5BCD29822B29A82400BEA1BF /* TimelyApp.swift in Sources */,
-				5B3E38302B3DE8BA00FD164F /* TimeHelper.swift in Sources */,
+				5B26C0872B94E64E0051908A /* undergroundStationsOld.swift in Sources */,
 				5BA978122B62AB6D00A42542 /* StationNode.swift in Sources */,
 				5B26C0802B7CF89D0051908A /* undergroundLines.swift in Sources */,
+				5B4FC1102B97DDEC00333FE2 /* ToggleButton.swift in Sources */,
+				5B26C0852B8F3D350051908A /* SearchView.swift in Sources */,
 				5B3E38322B3DEE6200FD164F /* DataService.swift in Sources */,
 				5BFFD45C2B7AB75F004EED85 /* undergroundStations.swift in Sources */,
 				5B26C0822B894A120051908A /* undergroundZones.swift in Sources */,
@@ -271,6 +296,7 @@
 				5B3E38402B43007C00FD164F /* TubeLineData.swift in Sources */,
 				5B7EDCA32B55346500947DDE /* ColourHelper.swift in Sources */,
 				5B7EDCA72B554B4000947DDE /* PlanView.swift in Sources */,
+				5BB00C952B9F161400020511 /* CoreData.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,12 +433,14 @@
 				DEVELOPMENT_TEAM = E5469RCMSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Timely/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -438,12 +466,14 @@
 				DEVELOPMENT_TEAM = E5469RCMSH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Timely/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.navigation";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -481,24 +511,19 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.9;
-			};
+/* Begin XCVersionGroup section */
+		5BB00C932B9F161400020511 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5BB00C942B9F161400020511 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 5BB00C942B9F161400020511 /* CoreData.xcdatamodel */;
+			name = CoreData.xcdatamodeld;
+			path = "/Users/rishi/Downloads/Github/swift-timely/Timely/Timely/Data/CoreData.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
 		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		5BFFD45E2B7AB8BC004EED85 /* SwiftUIX */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5BFFD45D2B7AB8BC004EED85 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
-			productName = SwiftUIX;
-		};
-/* End XCSwiftPackageProductDependency section */
+/* End XCVersionGroup section */
 	};
 	rootObject = 5BCD29762B29A82400BEA1BF /* Project object */;
 }

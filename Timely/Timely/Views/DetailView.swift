@@ -24,6 +24,7 @@ struct DetailView: View {
                 
                 
                 Text(tubeLine.name)
+                    .font(Font.custom("London Tube", size: 32))
                     .foregroundColor(Color(colour))
                     .bold()
                     .font(.title)
@@ -46,27 +47,32 @@ struct DetailView: View {
                     
                     if tubeLine.severityStatusDescription == "Good Service" {
                         Text(tubeLine.severityStatusDescription)
+                            .font(Font.custom("London Tube", size: 18))
                             .foregroundStyle(.green)
                             .padding(.bottom)
                     }
                     else if tubeLine.severityStatusDescription == "Minor Delays" {
                         Text(tubeLine.severityStatusDescription)
+                            .font(Font.custom("London Tube", size: 18))
                             .foregroundStyle(.orange)
                             .padding(.bottom)
                         
                     }
                     else if tubeLine.severityStatusDescription == "Part Closure"{
                           Text(tubeLine.severityStatusDescription)
+                            .font(Font.custom("London Tube", size: 18))
                               .foregroundStyle(Color("crimson"))
                               .padding(.bottom)
                     }
                     else {
                         Text(tubeLine.severityStatusDescription)
+                            .font(Font.custom("London Tube", size: 18))
                             .foregroundStyle(.red)
                             .padding(.bottom)
                     }
                     
                     Text(tubeLine.reason ?? "")
+                        .font(Font.custom("London Tube", size: 18))
                         .padding()
                         .background(Rectangle()
                             .foregroundColor(Color(red: 0.002, green: 0.096, blue: 0.658))
@@ -84,19 +90,23 @@ struct DetailView: View {
                 Spacer()
                 if tubeLine.severityStatusDescription == "Good Service" {
                     Text(tubeLine.severityStatusDescription)
+                        .font(Font.custom("London Tube", size: 18))
                         .foregroundStyle(.green)
                 }
                 else if tubeLine.severityStatusDescription == "Minor Delays" {
                     Text(tubeLine.severityStatusDescription)
+                        .font(Font.custom("London Tube", size: 18))
                         .foregroundStyle(.yellow)
                     
                 }
                 else if tubeLine.severityStatusDescription == "Part Closure"{
                       Text(tubeLine.severityStatusDescription)
+                        .font(Font.custom("London Tube", size: 18))
                           .foregroundStyle(Color("crimson"))
                 }
                 else {
                     Text(tubeLine.severityStatusDescription)
+                        .font(Font.custom("London Tube", size: 18))
                         .foregroundStyle(.red)
                     
                 }
@@ -109,7 +119,6 @@ struct DetailView: View {
             
         }
         .foregroundColor(colorScheme == .dark ? Color.black : .white)
-        .navigationBarTitle("Tube Details", displayMode: .inline)
         
     }
 }
