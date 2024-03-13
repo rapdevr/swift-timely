@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct TimelyApp: App {
@@ -13,5 +14,6 @@ struct TimelyApp: App {
         WindowGroup {
             MenuView()
         }
+        .modelContainer(for: JourneyItem.self)
     }
 }

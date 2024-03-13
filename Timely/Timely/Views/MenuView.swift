@@ -1,18 +1,24 @@
 import SwiftUI
 import UIKit
+import SwiftData
 
 struct MenuView: View {
     
     @State var LinesArray: [TubeLine] = []
     @State var time: String?
     var dataService: DataService = DataService()
+    
+    init() {
+        GraphConstructor().BuildGraph()
+        RefreshList()
+        }
         
     func RefreshList() {
         LinesArray.removeAll()
         dataService.UpdateService()
         LinesArray = dataService.tubeLinesArray
         time = "Refreshed at: " + GetTime()
-        GraphConstructor().BuildGraph()
+        
     }
     
     var body: some View {
@@ -116,11 +122,10 @@ struct MenuView: View {
                 }
                 .background(Color(.grey10))
                 .padding(.top, -8.0)
-                .onAppear {
-                    LinesArray.removeAll()  // Remove all elements before refreshing the list
-                    RefreshList()
-                }
                 
+            }
+            .onAppear {
+                RefreshList()
             }
             
             .tabViewStyle(PageTabViewStyle())

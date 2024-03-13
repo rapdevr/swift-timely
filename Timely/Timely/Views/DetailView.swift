@@ -118,7 +118,7 @@ struct DetailView: View {
             Spacer()
             
         }
-        .foregroundColor(colorScheme == .dark ? Color.black : .white)
+        .foregroundColor(.grey10)
         
     }
 }
