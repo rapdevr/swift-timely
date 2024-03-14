@@ -13,6 +13,9 @@ struct RouteView: View {
     let destination:String
     let route:[String]
     let type:String
+    @State var distance = 0.0
+    @State var time = 0.0
+    
     
     func calculateCumulativeValues(for route: [String]) -> (distance: Double, time: Double)? {
         var cumulativeDistance: Double = 0.0
@@ -24,8 +27,8 @@ struct RouteView: View {
         }
         
         for i in 0..<(route.count - 1) {
-            let currentStation = route[i]
-            let nextStation = route[i + 1]
+            let currentStation = stationDictionary[route[i]]?.name as? String ?? ""
+            let nextStation = stationDictionary[route[i+1]]?.name as? String ?? ""
             
             // Find the current station in the stationArray
             guard let currentStationInfo = stationArray.first(where: { ($0[0] as? String) == currentStation }) else {
@@ -57,19 +60,21 @@ struct RouteView: View {
                         for stop in connections {
                             if let stopName = stop[0] as? String, stopName == nextStation {
                                 if let distance = stop[1] as? Double, let time = stop[2] as? Double {
-                                    cumulativeDistance = distance
-                                    cumulativeTime = time
+                                    cumulativeDistance += distance
+                                    cumulativeTime += time
                                 }
                             }
                         }
                     }
                 }
             }
-
         }
         print(cumulativeDistance, cumulativeTime)
+        time = cumulativeTime
+        distance = cumulativeDistance
         return (cumulativeDistance, cumulativeTime)
     }
+
     
     var body: some View {
         VStack {
@@ -79,26 +84,28 @@ struct RouteView: View {
                     .multilineTextAlignment(.leading)
                     .padding(.leading)  // Apply here for the heading
                     .foregroundColor(Color(.white))
+                
                 Spacer()
+                
                 if let cumulativeValue = calculateCumulativeValues(for: route) {
                     if type == "Fastest" {
-                        if cumulativeValue.time > 60 {
-                            Text("\(cumulativeValue.time) mins")
+                        if cumulativeValue.time.rounded() > 60 {
+                            Text("\(Int(cumulativeValue.time.rounded())) mins")
                                 .font(Font.custom("London Tube", size: 34))
                                 .multilineTextAlignment(.trailing)
                                 .padding(.leading)  // Apply here for the heading
                                 .foregroundColor(Color(.white))
                         }
                         else {
-                            Text("\(cumulativeValue.time) mins")
+                            Text("\(Int(cumulativeValue.time.rounded())) mins")
                                 .font(Font.custom("London Tube", size: 34))
                                 .multilineTextAlignment(.trailing)
                                 .padding(.trailing)  // Apply here for the heading
                                 .foregroundColor(Color(.white))
                         }
                     }
-                    else {
-                        Text("\(cumulativeValue.distance) km")
+                    else if type == "Shortest"{
+                        Text("\(String(format: "%.1f", cumulativeValue.distance)) km")
                             .font(Font.custom("London Tube", size: 34))
                             .multilineTextAlignment(.leading)
                             .padding(.trailing)  // Apply here for the heading
@@ -112,7 +119,7 @@ struct RouteView: View {
             HStack {
                 ScrollView {
                     VStack (alignment: .leading){
-                        Text(stationDictionary[route.first ?? ""]?.name as? String ?? "")
+                        Text(stationDictionary[route.first ?? ""]?.name as! String)
                             .font(Font.custom("London Tube", size: 22))
                             .padding(.top, 5)
                         ForEach (route, id: \.self) { stop in

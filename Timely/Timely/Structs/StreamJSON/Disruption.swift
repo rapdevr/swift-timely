@@ -7,6 +7,8 @@
 
 import Foundation
 
+// struct to represent disruption
 struct Disruption: Decodable {
+    // description of the disruption
     let description: String?
 }

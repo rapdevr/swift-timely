@@ -1,8 +1,10 @@
 import Foundation
 import Combine
 
+
+// DataService class responsible for fetching and parsing tube line data
 class DataService: ObservableObject {
-    var tubeLinesArray: [TubeLine] = []
+    var tubeLinesArray: [TubeLine] = [] // Array to store TubeLine objects
 
     // Function to fetch JSON data from the given URL
     private func FetchJSONData(from url: URL, completion: @escaping (Data?) -> Void) {

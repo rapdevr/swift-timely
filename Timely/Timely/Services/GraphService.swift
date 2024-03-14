@@ -12,7 +12,9 @@ class UndergroundGraph {
     var stations: [String: Station] // [Station nameID: Station]
     var ProcessedRoute:[[Any]] = []
 
+    // Initialize function to create a new instance of the Graph
     init() {
+        // Initialize the stations dictionary with an empty dictionary
         self.stations = [:]
     }
 

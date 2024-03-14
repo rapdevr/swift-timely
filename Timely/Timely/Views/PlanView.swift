@@ -244,10 +244,6 @@ struct PlanView: View {
                                 .onTapGesture {
                                     isVia = true
                                 }
-                                .onChange(of: via) { value in
-                                    filteredDestinations = undergroundStations.filter {$0.lowercased().contains(value.lowercased()) }
-                                    
-                                }
                             
                             TextField("Avoid", text: $avoid )
                                 .font(Font.custom("London Tube", size: 18))
@@ -259,30 +255,12 @@ struct PlanView: View {
                                 .onTapGesture {
                                     isAvoid = true
                                 }
-                                .onChange(of: avoid) { value in
-                                    filteredDestinations = undergroundStations.filter {$0.lowercased().contains(value.lowercased()) }
-                                    
-                                }
-                            
-                            List (filteredDestinations, id:\.self) { station in
-                                Text(station)
-                                    .font(Font.custom("London Tube", size: 18))
-                                    .onTapGesture {
-                                        if isAvoid {
-                                            avoid = station
-                                            
-                                        }
-                                        else {
-                                            via = station
-                                        }
-                                    }
-                            }
+                                .presentationDetents([.medium, .large])
                             
                             Spacer()
                         }
                         .padding(.leading)
                         .toggleStyle(.button)
-                        .presentationDetents([.medium, .large])
                         
                         Spacer()
                         
@@ -329,7 +307,6 @@ struct PlanView: View {
                             EmptyView()
                         }
                             .navigationBarBackButtonHidden(true) // Hide the back button
-                            .navigationBarItems(leading: EmptyView())
                     )
 
                     .padding(.horizontal)
@@ -413,4 +390,5 @@ struct PlanView_Previews: PreviewProvider {
         static var previews: some View {
             PlanView()
         }
-    }
+}
+

@@ -7,8 +7,7 @@
 
 import UIKit
 
-
-
+// variables to store individual colours
 let Bakerloo = UIColor(red: 0.61, green: 0.37, blue: 0.21, alpha: 1.00)
 let Central = UIColor(red: 0.81, green: 0.23, blue: 0.17, alpha: 1.00)
 let Circle = UIColor(red: 0.97, green: 0.81, blue: 0.27, alpha: 1.00)
@@ -22,7 +21,9 @@ let Piccadilly = UIColor(red: 0.01, green: 0.06, blue: 0.60, alpha: 1.00)
 let Victoria = UIColor(red: 0.28, green: 0.62, blue: 0.85, alpha: 1.00)
 let WC = UIColor(red: 0.52, green: 0.80, blue: 0.70, alpha: 1.00)
 
-func getColour(name: String) -> UIColor {
+
+// function that takes an input string, and returns an output of type UIColor
+func GetColour(name: String) -> UIColor {
     if name == "Bakerloo"
     {
         return Bakerloo
