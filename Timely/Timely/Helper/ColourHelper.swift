@@ -43,7 +43,7 @@ func GetColour(name: String) -> UIColor {
     {
         return District
     }
-    if name == "Elizabeth line"
+    if name == "Elizabeth line" || name == "Elizabeth"
     {
         return ElizabethLine
     }

@@ -160,6 +160,7 @@ struct MenuView: View {
 import SwiftUI
 import UIKit
 import SwiftData
+import Network
 
 // View for the main menu
 struct MenuView: View {
@@ -183,6 +184,31 @@ struct MenuView: View {
         dataService.UpdateService()
         LinesArray = dataService.tubeLinesArray
         time = "Refreshed at: " + GetTime() // Update time
+    }
+    
+    func isDeviceOffline() -> Bool {
+        let monitor = NWPathMonitor()
+        let queue = DispatchQueue(label: "NetworkMonitor")
+        
+        var isOffline = false
+        
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                // Device is online
+                isOffline = false
+            } else {
+                // Device is offline
+                isOffline = true
+            }
+        }
+        
+        monitor.start(queue: queue)
+        
+        // Wait for a moment for the monitor to update the status
+        // You may want to handle asynchronous operations differently in your app
+        Thread.sleep(forTimeInterval: 0.5)
+        
+        return isOffline
     }
     
     // Body view
@@ -238,46 +264,54 @@ struct MenuView: View {
                     .padding(.bottom, -6.0)
                     
                     // List of tube lines
-                    List (LinesArray) {line in
-                        NavigationLink(destination: DetailView(tubeLine: line)){
-                            HStack {
-                                Image(line.name)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(height: 25)
-                                    .cornerRadius(10)
-                                Text(line.name)
-                                    .font(Font.custom("London Tube", size: 18))
-                                
-                                // Display severity status with appropriate color
-                                VStack {
-                                    HStack {
-                                        Spacer()
-                                        if line.severityStatusDescription == "Good Service" {
-                                            Text(line.severityStatusDescription)
-                                                .font(Font.custom("London Tube", size: 18))
-                                                .foregroundStyle(.green)
-                                        }
-                                        else if line.severityStatusDescription == "Minor Delays" {
-                                            Text(line.severityStatusDescription)
-                                                .font(Font.custom("London Tube", size: 18))
-                                                .foregroundStyle(.orange)
-                                        }
-                                        else if line.severityStatusDescription == "Part Closure" {
-                                            Text(line.severityStatusDescription)
-                                                .font(Font.custom("London Tube", size: 18))
-                                                .foregroundStyle(Color("crimson"))
-                                        }
-                                        else {
-                                            Text(line.severityStatusDescription)
-                                                .font(Font.custom("London Tube", size: 18))
-                                                .foregroundStyle(.red)
+                    if !isDeviceOffline() {
+                        List (LinesArray) {line in
+                            NavigationLink(destination: DetailView(tubeLine: line)){
+                                HStack {
+                                    Image(line.name)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(height: 25)
+                                        .cornerRadius(10)
+                                    Text(line.name)
+                                        .font(Font.custom("London Tube", size: 18))
+                                    
+                                    // Display severity status with appropriate color
+                                    VStack {
+                                        HStack {
+                                            Spacer()
+                                            if line.severityStatusDescription == "Good Service" {
+                                                Text(line.severityStatusDescription)
+                                                    .font(Font.custom("London Tube", size: 18))
+                                                    .foregroundStyle(.green)
+                                            }
+                                            else if line.severityStatusDescription == "Minor Delays" {
+                                                Text(line.severityStatusDescription)
+                                                    .font(Font.custom("London Tube", size: 18))
+                                                    .foregroundStyle(.orange)
+                                            }
+                                            else if line.severityStatusDescription == "Part Closure" {
+                                                Text(line.severityStatusDescription)
+                                                    .font(Font.custom("London Tube", size: 18))
+                                                    .foregroundStyle(Color("crimson"))
+                                            }
+                                            else {
+                                                Text(line.severityStatusDescription)
+                                                    .font(Font.custom("London Tube", size: 18))
+                                                    .foregroundStyle(.red)
+                                            }
                                         }
                                     }
                                 }
+                                Spacer()
                             }
-                            Spacer()
                         }
+                    }
+                    else {
+                        Spacer()
+                        Text("You're offline!")
+                            .font(Font.custom("London Tube", size: 32))
+                        Spacer()
                     }
                 }
                 .background(Color(.grey10))

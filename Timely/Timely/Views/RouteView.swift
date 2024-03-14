@@ -16,7 +16,6 @@ struct RouteView: View {
     @State var distance = 0.0
     @State var time = 0.0
     
-    
     func calculateCumulativeValues(for route: [String]) -> (distance: Double, time: Double)? {
         var cumulativeDistance: Double = 0.0
         var cumulativeTime: Double = 0.0
@@ -115,17 +114,17 @@ struct RouteView: View {
             }
             .padding(.bottom)
             .background(Color("johnstblue"))
-            
             HStack {
                 ScrollView {
                     VStack (alignment: .leading){
                         Text(stationDictionary[route.first ?? ""]?.name as! String)
-                            .font(Font.custom("London Tube", size: 22))
+                            .font(Font.custom("London Tube", size: 30))
                             .padding(.top, 5)
                         ForEach (route, id: \.self) { stop in
                             if stop == route.first || stop == route.last {
                                 
-                            } else {
+                            }
+                            else {
                                 HStack{
                                     Image(systemName: "circle")
                                         .bold()
@@ -134,16 +133,60 @@ struct RouteView: View {
                                         .font(Font.custom("London Tube", size: 18))
                                         .padding(.top, 5)
                                         .padding(.bottom, 5)
+                                    VStack (alignment: .center){
+                                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 17), spacing: 17)]) {
+                                            ForEach(stationArray.indices, id: \.self) { index in
+                                                let stationInfo = stationArray[index]
+                                                if let stationInfo = stationInfo as? [Any],
+                                                   let name = stationInfo[0] as? String,
+                                                   let lines = stationInfo[1] as? [String] {
+                                                    if name == stationDictionary[stop]?.name as! String {
+                                                        ForEach(lines, id: \.self) { line in
+                                                            Text(ShortName(line))
+                                                                .frame(width: 24)
+                                                                .foregroundColor(.white)
+                                                                .padding(.vertical, 7)
+                                                                .padding(.horizontal, 4)
+                                                                .background(Color(GetColour(name: line)))
+                                                                .cornerRadius(5)
+                                                                .font(Font.custom("London Tube", size: 9))
+                                                                .frame(maxWidth: .infinity)
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }.padding(.leading, 10)
+                                            .frame(maxWidth: .infinity)
+                                    }
                                     
-                                    Spacer()
                                 }
                             }
                         }
-                        Text(stationDictionary[route.last ?? ""]?.name as? String ?? "")
-                                        .font(Font.custom("London Tube", size: 22))
+                        if route.count == 2 {
+                            HStack {
+                                Image(systemName: "circle")
+                                    .bold()
+                                    .padding(.leading)
+                                
+                                Text("No stops")
+                                    .font(Font.custom("London Tube", size: 18))
+                                    .padding(.top, 5)
+                                    .padding(.bottom, 5)
+                            }
+                        }
+                        HStack {
+                            Text(stationDictionary[route.last ?? ""]?.name as? String ?? "")
+                                .font(Font.custom("London Tube", size: 30))
+                            Spacer()
+                            Text("£3.50")
+                                .font(Font.custom("London Tube", size: 30))
+                                .padding(.trailing)
+                        }
                     }
                     .padding(.leading)
                 }
+                Spacer()
             }
             
             

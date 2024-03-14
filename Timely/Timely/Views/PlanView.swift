@@ -36,8 +36,25 @@ struct PlanView: View {
     @State private var isVia: Bool = false
     
     func AddJourney() {
-        let journey = JourneyItem(origin, destination, isFast, isShortest, isFewestChange, via, avoid)
-        context.insert(journey)
+        // Check if any existing journey matches the criteria
+            let existingJourney = items.first { journey in
+                journey.origin == origin &&
+                journey.destination == destination &&
+                journey.isFastest == isFast &&
+                journey.isShortest == isShortest &&
+                journey.isFewestChange == isFewestChange
+            }
+
+            if existingJourney == nil {
+                // Journey does not exist, so add it
+                let journey = JourneyItem(origin, destination, isFast, isShortest, isFewestChange, via, avoid)
+                context.insert(journey)
+                // Save changes to the context
+                try? context.save()
+            } else {
+                print("Journey already exists.")
+            }
+        
         
     }
 
@@ -269,7 +286,7 @@ struct PlanView: View {
                     HStack (alignment: .center){
                         Spacer()
                         Button(action: {
-                            if !origin.isEmpty, !destination.isEmpty {
+                            if !origin.isEmpty, !destination.isEmpty, undergroundStations.contains(origin), undergroundStations.contains(destination){
                                 isPressed = true
                                 isEmpty = false
                                 if isShortest, let shortestPath = undergroundGraphDist.ShortestPath(from: GraphConstructor().NormaliseInput(origin), to: GraphConstructor().NormaliseInput(destination), passVia: via, avoidStation: avoid) {
@@ -298,7 +315,7 @@ struct PlanView: View {
                                 .frame(maxWidth: .infinity)
                         }
                         .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Error"), message: Text("Origin and destination cannot be empty!"), dismissButton: .default(Text("OK")))
+                            Alert(title: Text("Error"), message: Text("Origin and destination cannot be invalid!"), dismissButton: .default(Text("OK")))
                         }
                         Spacer()
                     }
